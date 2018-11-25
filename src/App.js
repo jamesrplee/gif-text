@@ -16,7 +16,7 @@ const Header = ({clearSearch, hasResults}) => (
       <img  src={clearButton} />
     </button> 
     ) : (
-      <h1 className="title">Jiffy</h1>
+      <h1 className="title">🤙🤙🤙🔥🔥🔥 It's Lit 🔥🔥🔥🤙🤙🤙</h1>
     )}
     
   </div>
@@ -88,7 +88,7 @@ class App extends Component {
     
     if (value.length > 2 && event.key === "Enter") {
       this.searchGiphy(value)
-    }
+    } 
   }
 
   clearSearch = () => {
@@ -101,6 +101,19 @@ class App extends Component {
 
     this.textInput.focus();
 
+  }
+
+  esc = event => {
+    if(event.key === "Escape") {
+      this.clearSearch()
+    }
+  }
+
+  componentDidMount(){
+    document.addEventListener("keydown", this.esc, false);
+  }
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.esc, false);
   }
 
   render() {
